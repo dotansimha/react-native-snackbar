@@ -41,8 +41,8 @@ static const NSTimeInterval ANIMATION_DURATION = 0.250;
 + (void)initialize {
     DEFAULT_DURATIONS = @{
                           @"-2": @INT_MAX,
-                          @"-1": @1500,
-                           @"0": @2750
+                          @"-1": @3000,
+                           @"0": @5000
                          };
 }
 
@@ -82,14 +82,14 @@ static const NSTimeInterval ANIMATION_DURATION = 0.250;
   
     titleLabel = [UILabel new];
     titleLabel.text = _title;
-    titleLabel.numberOfLines = 2;
+    titleLabel.numberOfLines = 0;
     titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    titleLabel.font = [UIFont fontWithName:@"Assistant" size:13.5];
     [titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self addSubview:titleLabel];
 
     actionButton = [UIButton new];
-    actionButton.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    actionButton.titleLabel.font = [UIFont fontWithName:@"Assistant-Bold" size:17];
     [actionButton setTitle:@"" forState:UIControlStateNormal];
     [actionButton addTarget:self action:@selector(actionPressed:) forControlEvents:UIControlEventTouchUpInside];
     [actionButton setTranslatesAutoresizingMaskIntoConstraints:NO];
